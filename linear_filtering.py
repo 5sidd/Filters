@@ -36,7 +36,7 @@ def gauss_kernel_generator(kernel_size: int, spatial_variance: float) -> np.ndar
     for r in range(-1 * (kernel_size // 2), (kernel_size // 2) + 1):
         for c in range(-1 * (kernel_size // 2), (kernel_size // 2) + 1):
             numerator = math.pow(r, 2) + math.pow(c, 2)
-            denominator = 2 * spatial_var
+            denominator = 2 * spatial_variance
             exponent = -1 * (numerator / denominator)
             kernel_weights[r + (kernel_size // 2)][c + (kernel_size // 2)] = math.exp(exponent)
 
